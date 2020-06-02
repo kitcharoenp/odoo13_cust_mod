@@ -1,2 +1,2 @@
 # -*- coding: utf-8 -*-
-import x_fleet_vehicle
+from . import x_fleet_vehicle

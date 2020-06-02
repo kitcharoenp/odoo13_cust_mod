@@ -3,7 +3,6 @@
     <record id='fleet.fleet_vehicle_odometer_action' model='ir.actions.act_window'>
         <field name="name">Vehicles Odometer</field>
         <field name="res_model">fleet.vehicle.odometer</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form,graph</field>
         <field name="context">{"search_default_my_odometer" : 1}</field>
         <field name="search_view_id" ref="x_vehicle_odometer_filter_view" />
