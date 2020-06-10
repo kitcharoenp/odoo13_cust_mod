@@ -16,8 +16,9 @@ class FleetVehicle(models.Model):
     x_administrator_id = fields.Many2one(
         'hr.employee',
         string='Administrator')
-    x_fleet_card_no = fields.Char('Fleet Card No.', copy=False)
-    x_fleet_card_password = fields.Char('Fleet Card Password', copy=False)
+    x_fleet_card_no = fields.Char(string='Fleet Card No.', copy=False)
+    x_fleet_card_password = fields.Char(string='Fleet Card Password', copy=False)
+    x_vehicle_gps_id = fields.Char(string='GPS Vehicle ID')
 
     @api.onchange('x_driver_id1')
     def _onchange_x_driver(self):
