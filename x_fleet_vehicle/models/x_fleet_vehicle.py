@@ -24,17 +24,3 @@ class FleetVehicle(models.Model):
     def _onchange_x_driver(self):
         if self.x_driver_id1:
             self.driver_id = self.x_driver_id1.user_id.partner_id
-
-    def _get_odometer(self):
-        super(FleetVehicle, self)._get_odometer()
-        FleetVehicalOdometer = self.env['fleet.vehicle.odometer']
-        for record in self:
-            vehicle_odometer = FleetVehicalOdometer.search([('vehicle_id', '=', record.id)], limit=1, order='value desc')
-            if vehicle_odometer:
-                record.odometer = vehicle_odometer.y_odometer
-
-                if(vehicle_odometer.y_odometer <= 0):
-                    record.odometer = vehicle_odometer.value
-
-            else:
-                record.odometer = 0

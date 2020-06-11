@@ -10,15 +10,15 @@
         <field name="arch" type="xml">
             <xpath expr="//tree" position="replace">
                 <tree string="Odometer Logs">
-                    <field name="date" />
+                    <field name="x_datetime_start" />
+                    <field name="x_datetime_end" />
                     <field name="vehicle_id"/>
+                    <field name="x_distance" />
                     <field name="x_project_id"/>
                     <field name="x_description"/>
-                    <field name="value" />
-                    <field name="y_odometer" />
-                    <field name="unit" />
+                    <field name="x_source_location" />
+                    <field name="x_destination_location" />
                     <field name="x_driver_id" />
-                    <field name="x_state_id" />
                 </tree>
             </xpath>
         </field>
