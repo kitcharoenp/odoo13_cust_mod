@@ -10,30 +10,25 @@
             <xpath expr="//sheet" position="replace">
                 <sheet>
                     <group col="2">
+
                         <group>
-                            <field name="vehicle_id"
-                                options="{'no_open': False, 'no_create': True}"/>
-                            <field name="date" />
-                            <field name="x_project_id" required="1"
-                                options="{'no_open': False, 'no_create': True}"/>
-                            <field name="x_description"/>
+                            <field name="x_datetime_start" readonly="1"/>
+                            <field name="x_datetime_end" readonly="1"/>
+                            <field name="x_distance" readonly="1"/>
+                            <field name="x_source_location" readonly="1"/>
+                            <field name="x_destination_location" readonly="1"/>
                         </group>
+
                         <group>
-                            <label for="value"/>
-                            <div class="o_row">
-                                <field name="value"/>
-                                <field name="unit"/>
-                            </div>
-                            <label for="y_odometer"/>
-                            <div class="o_row">
-                                <field name="y_odometer"/>
-                                <field name="unit"/>
-                            </div>
-                            <field name="x_driver_id"
+                          <field name="x_project_id" required="1"
+                            options="{'no_open': False, 'no_create': True}"/>
+                          <field name="x_driver_id"
+                              options="{'no_open': False, 'no_create': True}"/>
+                          <field name="x_state_id"
                                 options="{'no_open': False, 'no_create': True}"/>
-                            <field name="x_state_id"
-                                options="{'no_open': False, 'no_create': True}"/>
+                          <field name="x_description"/>
                         </group>
+
                     </group>
                 </sheet>
 

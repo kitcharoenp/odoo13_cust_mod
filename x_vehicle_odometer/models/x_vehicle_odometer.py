@@ -29,21 +29,15 @@ class FleetVehicleOdometer(models.Model):
         string='Project',
         domain=['|', ('active', '=', True), ('name', 'like', 'I0')])
     x_datetime_start = fields.Datetime(
-        string='Start',
-        readonly=True)
+        string='Start')
     x_datetime_end = fields.Datetime(
-        string='End',
-        readonly=True)
+        string='End')
     x_source_location = fields.Char(
-        string='Source',
-        readonly=True)
+        string='Source')
     x_destination_location = fields.Char(
-        string='Destination',
-        readonly=True)
+        string='Destination')
     x_distance = fields.Float(
-        string='Distance Km',
-        readonly=True)
-
+        string='Distance Km')
     # TODO: new fields:  period,  fuel consumption
 
     def _compute_vehicle_log_name(self):
