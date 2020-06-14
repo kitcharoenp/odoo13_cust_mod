@@ -37,7 +37,10 @@ class FleetVehicleOdometer(models.Model):
         string='Destination')
     x_distance = fields.Float(
         string='Distance Km')
-    # TODO: new fields:  period,  fuel consumption
+    x_duration = fields.Float(
+        string='Duration Min')
+        
+    # TODO: new fields:  fuel consumption
 
     @api.onchange('vehicle_id')
     def _onchange_vehicle(self):

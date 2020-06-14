@@ -12,8 +12,9 @@
                 <tree string="Odometer Logs">
                     <field name="x_datetime_start" />
                     <field name="x_datetime_end" />
-                    <field name="vehicle_id"/>
                     <field name="x_distance" />
+                    <field name="x_duration" />
+                    <field name="vehicle_id"/>
                     <field name="x_project_id"/>
                     <field name="x_description"/>
                     <field name="x_source_location" />
