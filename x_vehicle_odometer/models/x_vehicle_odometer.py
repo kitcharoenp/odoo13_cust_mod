@@ -26,8 +26,7 @@ class FleetVehicleOdometer(models.Model):
         string='State')
     x_project_id = fields.Many2one(
         'project.project',
-        string='Project',
-        domain=['|', ('active', '=', True), ('name', 'like', 'I0')])
+        string='Project')
     x_datetime_start = fields.Datetime(
         string='Start')
     x_datetime_end = fields.Datetime(
@@ -39,16 +38,6 @@ class FleetVehicleOdometer(models.Model):
     x_distance = fields.Float(
         string='Distance Km')
     # TODO: new fields:  period,  fuel consumption
-
-    def _compute_vehicle_log_name(self):
-        # super(FleetVehicleOdometer, self)._compute_vehicle_log_name()
-        for record in self:
-            name = record.vehicle_id.name
-            if not name:
-                name = record.date
-            elif record.date:
-                name += ' / ' + record.date
-            record.name = name
 
     @api.onchange('vehicle_id')
     def _onchange_vehicle(self):

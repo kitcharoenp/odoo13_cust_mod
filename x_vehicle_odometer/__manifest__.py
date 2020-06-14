@@ -13,7 +13,7 @@ Enhancement Vehicle Odometer :
     * Rule fleet/user see all Vehicle and Odometer
     * Rule user can only modify own records
         """,
-    'depends': ['fleet'],
+    'depends': ['fleet', 'project'],
     'summary': 'Enhancement - Vehicle Odometer',
     'data': [
 	'views/x_vehicle_odometer_filter_view.xml',
