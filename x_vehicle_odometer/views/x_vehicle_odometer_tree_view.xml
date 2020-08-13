@@ -9,17 +9,17 @@
             ref="fleet.fleet_vehicle_odometer_view_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//tree" position="replace">
-                <tree string="Odometer Logs">
-                    <field name="x_datetime_start" />
-                    <field name="x_datetime_end" />
-                    <field name="x_distance" />
-                    <field name="x_duration" />
-                    <field name="vehicle_id"/>
-                    <field name="x_project_id"/>
+                <tree string="Odometer Logs" editable="top">
+                    <field name="x_datetime_start" readonly="1"/>
+                    <field name="x_datetime_end" readonly="1"/>
+                    <field name="x_distance" readonly="1"/>
+                    <field name="x_duration" readonly="1"/>
+                    <field name="vehicle_id" readonly="1" options="{'no_open': False, 'no_create': True}"/>
+                    <field name="x_project_id" required="1" options="{'no_open': False, 'no_create': True}"/>
                     <field name="x_description"/>
-                    <field name="x_source_location" />
-                    <field name="x_destination_location" />
-                    <field name="x_driver_id" />
+                    <field name="x_source_location" readonly="1"/>
+                    <field name="x_destination_location" readonly="1"/>
+                    <field name="x_driver_id" options="{'no_open': False, 'no_create': True}"/>
                 </tree>
             </xpath>
         </field>
