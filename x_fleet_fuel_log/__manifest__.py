@@ -11,6 +11,7 @@
     'data': [
         # View
         'views/x_fleet_fuel_log_form_view.xml',
+        'security/x_fleet_fuel_log_security.xml',
     ],
     'installable': True,
     'auto-install': False,

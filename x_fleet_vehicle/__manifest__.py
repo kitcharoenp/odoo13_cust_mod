@@ -17,6 +17,7 @@ Enhancement Information on a vehicle :
     'data': [
         'views/x_fleet_vehicle_form_view.xml',
         'views/x_fleet_vehicle_tree_view.xml',
+        'security/x_fleet_vehicle_security.xml',
     ],
     'installable': True,
     'auto-install': False,
