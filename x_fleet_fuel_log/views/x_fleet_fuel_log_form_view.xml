@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='x_fleet_fuel_log_form_view' model='ir.ui.view'>
+        <field name="name">Fleet fuel log form</field>
+        <field name="model">fleet.vehicle.log.fuel</field>
+        <field name="inherit_id"
+            ref="fleet.fleet_vehicle_log_fuel_view_form"/>
+        <field name="arch" type="xml">
+
+            <!-- replace Refueling Details section-->
+
+            <xpath expr="//form/sheet/group[1]/group[2]" position="replace">
+                <group string="Refueling Details">
+                    <field name="amount" required="1"/>
+                    <field name="price_per_liter" required="1"/>
+                    <field name="liter"/>
+                    <field name="x_fuel_type" required="1"/>
+                    <field name="x_payment_type" required="1"/>
+                </group>
+            </xpath>
+
+
+            <xpath expr="//form/sheet/group[2]/group[1]" position="replace">
+              <group string="Odometer Details">
+                <label for="odometer"/>
+                <div class="o_row">
+                  <field name="odometer" required="1"/>
+                  <field name="odometer_unit"/>
+                </div>
+              </group>
+            </xpath>
+
+
+            <xpath expr="//form/sheet/group[2]/group[2]" position="replace">
+              <group string="Additional Details">
+                <field name="date" required="1"/>
+                <field name="purchaser_id" required="1"/>
+                <field name="inv_ref" />
+                <field name="vendor_id"/>
+              </group>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

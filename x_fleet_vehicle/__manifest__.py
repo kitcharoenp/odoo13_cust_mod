@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 {
-    'name': 'Fleet Vehicle',
+    'name': 'xFleet Vehicle',
     'version': '1.0',
     'license': 'AGPL-3',
     'category': 'Fleet',
