@@ -24,3 +24,9 @@ class FleetVehicle(models.Model):
     def _onchange_x_driver(self):
         if self.x_driver_id1:
             self.driver_id = self.x_driver_id1.user_id.partner_id
+
+    # Overide the original method
+    @api.depends('model_id.brand_id.name', 'model_id.name', 'license_plate')
+    def _compute_vehicle_name(self):
+        for record in self:
+            record.name = (record.model_id.brand_id.name or '') + '/' + (record.license_plate or _('No Plate')) + '/' + (record.model_id.name or '')
