@@ -39,7 +39,7 @@ class FleetVehicleOdometer(models.Model):
         string='Distance Km')
     x_duration = fields.Float(
         string='Duration Min')
-        
+
     # TODO: new fields:  fuel consumption
 
     @api.onchange('vehicle_id')
@@ -47,3 +47,27 @@ class FleetVehicleOdometer(models.Model):
         super(FleetVehicleOdometer, self)._onchange_vehicle()
         if self.vehicle_id:
             self.value = self.vehicle_id.odometer
+
+    @api.multi
+    def write(self, vals):
+        for record in self:
+            if record.x_datetime_start:
+                st_datetime = fields.Datetime.from_string(
+                    record.x_datetime_start)
+                # autocomplete  date from start date
+                st_date_tz = fields.Datetime.context_timestamp(
+                                self, st_datetime).date()
+                vals['date'] = st_date_tz
+        return super(FleetVehicleOdometer, self).write(vals)
+
+    @api.onchange('x_datetime_start')
+    def _compute_date_from_x_datetime_start(self):
+        """ auto change 'date' onchange of 'x_start_date """
+        for record in self:
+            if record.x_datetime_start:
+                st_datetime = fields.Datetime.from_string(
+                    record.x_datetime_start)
+                # autocomplete  date from start date
+                st_date_tz = fields.Datetime.context_timestamp(
+                                self, st_datetime).date()
+                record.date = st_date_tz
