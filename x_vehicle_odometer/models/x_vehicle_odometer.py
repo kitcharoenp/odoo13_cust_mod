@@ -48,7 +48,6 @@ class FleetVehicleOdometer(models.Model):
         if self.vehicle_id:
             self.value = self.vehicle_id.odometer
 
-    @api.multi
     def write(self, vals):
         for record in self:
             if record.x_datetime_start:
