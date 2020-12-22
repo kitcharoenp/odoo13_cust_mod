@@ -15,7 +15,7 @@
             <!--  project  field -->
             <xpath expr="//field[@name='company_id']"
                 position="after">
-                <field name="x_account_analytic_id"
+                <field name="x_project_id"
                   string="Project"
                   options="{'no_create': True}"/>
             </xpath>
