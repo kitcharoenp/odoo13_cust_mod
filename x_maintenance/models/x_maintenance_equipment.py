@@ -13,6 +13,10 @@ class MaintenanceEquipment(models.Model):
         check_company=True,
         domain="[('type', 'in', ['product', 'consu'])]")
 
+    x_account_analytic_id = fields.Many2one(
+        'account.analytic.account',
+        string='Project')
+
     @api.onchange('product_id')
     def _onchange_model(self):
         if self.product_id:

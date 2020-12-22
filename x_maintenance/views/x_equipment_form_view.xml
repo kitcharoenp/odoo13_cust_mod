@@ -12,6 +12,14 @@
                 <field name="product_id"/>
             </xpath>
 
+            <!--  project  field -->
+            <xpath expr="//field[@name='company_id']"
+                position="after">
+                <field name="x_account_analytic_id"
+                  string="before"
+                  options="{'no_create': True}"/>
+            </xpath>
+
         </field>
     </record>
 
